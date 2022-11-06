@@ -14,13 +14,13 @@ const getHtmlData = async (path, options) => {
 /* CROS middleware */
 app.use(function (req, res, next) {
   // Mọi domain
-  res.header('Access-Control-Allow-Origin', '*');
-
-  // res.header('Access-Control-Allow-Origin', 'https://my-manga-react.netlify.app');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Referer, User-Agent');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Referer', 'https://nettruyenin.com/');
+  // res.header('Access-Control-Allow-Origin', '*');
+  res.header('access-control-allow-headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('access-control-allow-origin', 'https://my-manga-react.netlify.app');
+  res.header('accept', 'application/json, text/plain, */*');
+  res.header('accept-encoding', 'gzip, deflate, br');
+  res.header('accept-language', 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5');
+  res.header('referer', 'https://nettruyenin.com/');
   next();
 });
 
