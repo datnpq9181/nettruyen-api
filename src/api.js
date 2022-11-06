@@ -20,8 +20,9 @@ app.use(function (req, res, next) {
 
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Referer, User-Agent');
 
-  res.header('Host', 'https://my-manga-react.netlify.app');
+  res.header('Host', 'https://nettruyenin.com/');
   res.header('Referer', 'https://nettruyenin.com/');
+  res.header('Referer-Policy', 'unsafe-url');
   next();
 });
 
