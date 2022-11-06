@@ -14,9 +14,9 @@ const getHtmlData = async (path, options) => {
 /* CROS middleware */
 app.use(function (req, res, next) {
   // Mọi domain
-  res.header('Access-Control-Allow-Origin', '*');
+  // res.header('Access-Control-Allow-Origin', '*');
 
-  // res.header('Access-Control-Allow-Origin', 'https://cttruyen.netlify.app');
+  res.header('Access-Control-Allow-Origin', 'https://my-manga-react.netlify.app');
 
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
