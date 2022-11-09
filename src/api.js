@@ -6,7 +6,10 @@ const port = process.env.PORT || 8080;
 
 const baseUrl = 'https://nhattruyenin.com/';
 
-const getHtmlData = async (path, options) => {
+const getHtmlData = async (path, options = {}) => {
+  options.headers = {
+    referer: 'https://www.nettruyenin.com/',
+  };
   const res = await axios.get(baseUrl + path, options);
   return res.data;
 };
