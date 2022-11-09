@@ -6,10 +6,7 @@ const port = process.env.PORT || 8080;
 
 const baseUrl = 'https://nhattruyenin.com/';
 
-const getHtmlData = async (path, options = {}) => {
-  options.headers = {
-    referer: 'https://www.nettruyenin.com/',
-  };
+const getHtmlData = async (path, options) => {
   const res = await axios.get(baseUrl + path, options);
   return res.data;
 };
@@ -19,7 +16,7 @@ app.use(function (req, res, next) {
   // Mọi domain
   // res.header('Access-Control-Allow-Origin', '*');
   res.header('access-control-allow-headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('access-control-allow-origin', '*');
+  res.header('access-control-allow-origin', 'https://my-manga-react.netlify.app');
   res.header('accept', 'application/json, text/plain, */*');
   res.header('accept-encoding', 'gzip, deflate, br');
   res.header('accept-language', 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5');
@@ -370,7 +367,7 @@ app.get('/chapter/*', async (req, res) => {
 
     $('.reading-detail .page-chapter').each((index, element) => {
       const title = $(element).find('img').attr('alt');
-      const imgUrl = $(element).find('img').attr('src');
+      const imgUrl = $(element).find('img').attr('data-original');
 
       chapterImages.push({
         title,
